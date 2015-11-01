@@ -15,7 +15,8 @@
     <body>
         <form action="" method="POST">
             <input type="text" name="username" placeholder="Username"><br>
-            <div class="g-recaptcha" data-sitekey="<?php echo getenv('RECAPTCHA_PUBLICKEY'); ?>"></div>
+            <div class="g-recaptcha" data-sitekey="<?php echo getenv('RECAPTCHA_PUBLICKEY'); ?>"></div><br>
+            <input type="submit">
         </form>
     </body>
 </html>
