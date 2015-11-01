@@ -10,5 +10,10 @@ if (isset($_POST['username'], $_POST['g-recaptcha-response'])) {
     $token = $_POST['g-recaptcha-response'];
     $username = $_POST['username'];
 
-    echo TwitchVerification\Verify::verify_captcha($token, $username) ? 'good' : 'fail';
+    if (TwitchVerification\Verify::verify_captcha($token, $username)) {
+        TwitchVerification\Verify::authorize_user($username);
+        echo 'Authorized';
+    } else {
+        die('Bad captcha code');
+    }
 }
