@@ -10,9 +10,7 @@ class Verify {
      */
     public static function verify_captcha($token, $ip = null)
     {
-        if ($ip === null) {
-            $ip = $_SERVER['REMOTE_ADDR'];
-        } // defaults to remote address
+        if ($ip === null) { $ip = $_SERVER['REMOTE_ADDR']; } // defaults to remote address
 
         $recaptcha = new \ReCaptcha\ReCaptcha(getenv('RECAPTCHA_PRIVATEKEY'));
         $resp = $recaptcha->verify($token, $ip); // verify recaptcha
