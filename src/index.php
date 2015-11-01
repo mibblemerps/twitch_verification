@@ -2,7 +2,8 @@
     require_once '../vendor/autoload.php';
 
     // Load configuration
-    $config = require '../config.php';
+    $env = new \Dotenv\Dotenv(__DIR__ . '/..');
+    $env->load();
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
     <body>
         <form action="" method="POST">
             <input type="text" name="username" placeholder="Username"><br>
-            <div class="g-recaptcha" data-sitekey="6LeN4AMTAAAAAIHYQQa4LwyUEbxWBl8Es8i2fCmg"></div>
+            <div class="g-recaptcha" data-sitekey="<?php echo getenv('RECAPTCHA_PUBLICKEY'); ?>"></div>
         </form>
     </body>
 </html>

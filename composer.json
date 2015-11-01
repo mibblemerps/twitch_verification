@@ -9,6 +9,7 @@
         }
     ],
     "require": {
-        "google/recaptcha": "^1.1"
+        "google/recaptcha": "^1.1",
+        "vlucas/phpdotenv": "^2.1"
     }
 }

@@ -3,3 +3,6 @@
 
 # PHPStorm
 /.idea/
+
+# PhpDotEnv
+/.env
